@@ -1,0 +1,140 @@
+.section_hero {
+  background-image: url('../images/bg_hq.jpg');
+  background-position: 50%;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+.logo_desktop {
+  height: 35px;
+  margin: 15px;
+  position: absolute;
+  inset: 0% auto auto 0%;
+}
+
+.chara {
+  height: 100%;
+  position: static;
+  inset: auto auto 0%;
+}
+
+.cascade {
+  background-image: url('../images/cascad.gif');
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  inset: 0%;
+}
+
+.tree {
+  background-image: url('../images/tree.gif');
+  background-position: 50%;
+  background-size: cover;
+  position: absolute;
+  inset: 0%;
+}
+
+.block_chara {
+  height: 35%;
+  position: absolute;
+  inset: auto auto 0%;
+}
+
+.eyes {
+  position: absolute;
+  inset: 0%;
+}
+
+.links {
+  z-index: 50;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px;
+  display: flex;
+  position: absolute;
+  inset: auto auto 0% 0%;
+}
+
+.tg {
+  background-color: #e5baff;
+  background-image: url('../images/tg.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  border: 3px solid #000;
+  border-bottom-width: 5px;
+  border-radius: 14%;
+  width: 45px;
+  height: 45px;
+  margin-left: 0;
+}
+
+.tg:hover {
+  border-color: #fff;
+}
+
+.x {
+  background-color: #e5baff;
+  background-image: url('../images/x.svg');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: 89%;
+  border: 2px solid #000;
+  border-bottom-width: 5px;
+  border-radius: 14%;
+  width: 45px;
+  height: 45px;
+  margin-left: 7px;
+}
+
+.x:hover {
+  border-color: #fff;
+}
+
+.screener {
+  background-color: #e5baff;
+  background-image: url('../images/dex.png');
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  border: 3px solid #000;
+  border-bottom-width: 5px;
+  border-radius: 14%;
+  width: 45px;
+  height: 45px;
+  margin-left: 7px;
+}
+
+.screener:hover {
+  border-color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+  .links {
+    margin: 15px;
+    inset: 0% 0% auto auto;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .section_hero {
+    background-position: 50%;
+  }
+
+  .links {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 7px;
+    display: flex;
+    top: auto;
+    right: auto;
+  }
+}
