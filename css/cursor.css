@@ -1,0 +1,26 @@
+body * {
+    cursor: none !important;
+}
+
+.custom-cursor {
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    transform: translate(-50%, -50%);
+    transition: transform 0.1s ease;
+}
+
+.custom-cursor::after {
+    content: '😘';
+    display: block;
+}
+
+.custom-cursor.clicked {
+    transform: translate(-50%, -50%) scale(1.2);
+}

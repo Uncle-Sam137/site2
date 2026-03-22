@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Stay updated with the latest news, insights, and developments from the M3M community. Explore our blog for Web3 trends, GameFi updates, and community highlights.">
+    <meta name="keywords"
+        content="M3M Blog, Web3 News, Cryptocurrency Updates, GameFi Insights, Solana News, MwahMwahMwah Updates, Crypto Blog, DeFi News, NFT Updates, Blockchain News, Digital Assets Blog, Community Updates, Web3 Social, Metaverse News, Crypto Ecosystem">
+    <meta name="author" content="M3M Community">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="img/logo/image.ico">
+
+
+    <!-- Open Graph Protocol -->
+    <meta property="og:title" content="Blog - M3M Community">
+    <meta property="og:description"
+        content="Stay updated with the latest news, insights, and developments from the M3M community. Explore our blog for Web3 trends, GameFi updates, and community highlights.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://m3m.me/blog.html">
+    <meta property="og:image" content="https://m3m.me/img/logo/image.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@m3mmwah">
+    <meta name="twitter:title" content="Blog - M3M Community">
+    <meta name="twitter:description"
+        content="Stay updated with the latest news, insights, and developments from the M3M community. Explore our blog for Web3 trends, GameFi updates, and community highlights.">
+    <meta name="twitter:image" content="https://m3m.me/img/logo/image.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NZ2JW5XK');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W6JF2BSNRD"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W6JF2BSNRD');
+    </script>
+
+    <title>Blog - M3M Community</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cursor.css">
+    <link rel="stylesheet" href="css/menu-animation.css">
+    <link rel="stylesheet" href="css/blog-modern.css">
+
+    <!-- Schema.org markup for Google -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "M3M Community Blog",
+      "description": "Stay updated with the latest news, insights, and developments from the M3M community. Explore our blog for Web3 trends, GameFi updates, and community highlights.",
+      "url": "https://m3m.me/blog.html",
+      "image": "https://m3m.me/img/logo/image.png",
+      "publisher": {
+        "@type": "Organization",
+        "name": "MwahMwahMwah Community",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://m3m.me/img/logo/image.png"
+        }
+      }
+    }
+    </script>
+    <style>
+        .hero {
+            background: url('img/blogimg.jpg') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            padding: 2rem;
+            color: white;
+            text-align: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .blog-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-card-content {
+            padding: 1.5rem;
+        }
+
+        .blog-card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .blog-card-excerpt {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-meta {
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 0 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-text {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            font-weight: normal;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            position: relative;
+            z-index: 1;
+            transform: translateZ(0);
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Lilita One', cursive;
+            font-size: 1.4rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+            transition: var(--transition-default);
+        }
+
+        .logo-text {
+            color: #fff;
+            font-family: 'Lilita One', cursive;
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 2rem;
+        }
+
+        .blog-card-meta {
+            font-size: 0.8rem;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NZ2JW5XK" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="custom-cursor"></div>
+    <header class="hero">
+        <nav class="nav-container">
+            <div class="logo">
+                <img src="img/logo/image.ico" alt="M3M Community Token Logo - A Symbol of Web3 Goodwill"
+                    class="logo-img">
+                <span class="logo-text">M3M</span>
+            </div>
+            <div class="nav-menu">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="join.html" class="nav-link">Join</a></li>
+                </ul>
+            </div>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <div class="hero-content">
+            <h1>M3M Community Blog</h1>
+            <p class="hero-text">Stay updated with the latest news, insights, and developments from the M3M community.
+            </p>
+        </div>
+    </header>
+
+    <main class="blog-grid">
+        <!-- 示例文章卡片 -->
+        <div class="blog-card">
+            <img src="img/blogimg.jpg" alt="Web3 Development">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Getting Started with Web3 Development</h3>
+                <p class="blog-card-excerpt">Learn the fundamentals of Web3 development and how to build decentralized
+                    applications on the blockchain.</p>
+                <div class="blog-card-meta">March 15, 2026 · 5 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/gamefiimg.gif" alt="GameFi Trends">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Latest GameFi Trends in 2026</h3>
+                <p class="blog-card-excerpt">Explore the evolving landscape of GameFi and discover new opportunities in
+                    blockchain gaming.</p>
+                <div class="blog-card-meta">March 14, 2026 · 4 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/love.gif" alt="Community Building">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Building Strong Crypto Communities</h3>
+                <p class="blog-card-excerpt">Tips and strategies for creating and nurturing a vibrant cryptocurrency
+                    community.</p>
+                <div class="blog-card-meta">March 13, 2026 · 6 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/orangutan.gif" alt="DeFi Innovation">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">DeFi Innovations on Solana</h3>
+                <p class="blog-card-excerpt">Discover the latest developments in decentralized finance on the Solana
+                    blockchain.</p>
+                <div class="blog-card-meta">March 12, 2026 · 7 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/coffee.gif" alt="NFT Market">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">NFT Market Analysis</h3>
+                <p class="blog-card-excerpt">A comprehensive look at the current state of the NFT market and future
+                    predictions.</p>
+                <div class="blog-card-meta">March 11, 2026 · 5 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/lesgo.gif" alt="Token Economics">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Understanding Token Economics</h3>
+                <p class="blog-card-excerpt">Deep dive into the principles of token economics and their impact on crypto
+                    projects.</p>
+                <div class="blog-card-meta">March 10, 2026 · 8 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/Giveme.gif" alt="Blockchain Security">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Blockchain Security Best Practices</h3>
+                <p class="blog-card-excerpt">Essential security measures for protecting your crypto assets and smart
+                    contracts.</p>
+                <div class="blog-card-meta">March 9, 2026 · 6 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/memes1/kiss.gif" alt="Social Trading">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Social Trading in Crypto</h3>
+                <p class="blog-card-excerpt">How social trading is transforming the cryptocurrency trading landscape.
+                </p>
+                <div class="blog-card-meta">March 8, 2026 · 4 min read</div>
+            </div>
+        </div>
+
+        <div class="blog-card">
+            <img src="img/memes2/tom-and-jerry-cartoons.gif" alt="Meme Culture">
+            <div class="blog-card-content">
+                <h3 class="blog-card-title">Meme Culture in Crypto</h3>
+                <p class="blog-card-excerpt">The influence of memes on cryptocurrency adoption and community building.
+                </p>
+                <div class="blog-card-meta">March 7, 2026 · 5 min read</div>
+            </div>
+        </div>
+    </main>
+
+    <div class="rights">
+        <div class="rights-container">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="https://pump.fun/">Pump</a></li>
+                    <li><a href="http://solana.com/">Solana</a></li>
+                    <li><a href="https://dexscreener.com/">DEX Screener</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://x.com/M3M_TOKEN">Twitter</a></li>
+                    <li><a href="https://t.me/M3M_TOKEN">Telegram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="rights-content">
+            <p>© 2026 M3M. All Rights Reserved.</p>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/menu-animation.js"></script>
+    <script>
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.custom-cursor');
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        document.addEventListener('mousedown', () => {
+            document.querySelector('.custom-cursor').classList.add('clicked');
+        });
+
+        document.addEventListener('mouseup', () => {
+            document.querySelector('.custom-cursor').classList.remove('clicked');
+        });
+    </script>
+</body>
+
+</html>
