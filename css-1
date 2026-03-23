@@ -1,6 +1,0 @@
-@font-face {
-  font-family: 'Voltaire';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/voltaire/v21/1Pttg8PcRfSblAvGvTovaqE.ttf) format('truetype');
-}
