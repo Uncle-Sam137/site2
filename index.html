@@ -1,35 +1,240 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>PINENUTISM</title>
-	<link href="style.css" rel="stylesheet" />
-	<link rel="icon" type="image/x-icon" href="./awd.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$FLUFO</title>
+    <link rel="icon" href="flufo-logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
-	<div class="container">
-		<div class="hero"></div>
-		<h1 dir="rtl">PINENUTISM</h1>
+    <div class="loader-wrapper">
+        <div class="loader-content">
+            <div class="loader-circle">
+                <img src="flufo-logo.png" alt="Flufo Logo" class="loader-logo">
+                <div class="loader-orbit">
+                    <span class="orbit-dot"></span>
+                </div>
+            </div>
+            <div class="loader-text">
+                <span>$</span>
+                <span>F</span>
+                <span>L</span>
+                <span>U</span>
+                <span>F</span>
+                <span>O</span>
+            </div>
+            <div class="loader-subtitle">Loading the fluff...</div>
+        </div>
+    </div>
 
-		<h2>$PNTAUTISM</h2>
+    <div class="cursor-effects"></div>
 
-		<p>PINENUTISM is a movement honoring Pinenutism the squirrel, championing resilience, compassion, and the
-			defense of the vulnerable against overreach. <br />
-			<img src="image/hazelnutism.gif" />
-	</div>
+    <!-- Header -->
+    <header>
+        <div class="full-header">
+            <div class="logo-container">
+                <div class="logo">
+                    <img src="flufo-logo.png" alt="logo">
+                </div>
+                <h2>$FLUFO</h2>
+            </div>
 
-	Join the PINENUTISM Army &amp; let&#39;s take this squirrel to the moon!&nbsp;</p>
+            <div class="links-container">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#tokenomics">Tokenomics</a>
+                <a href="#how-to-buy">How to buy</a>
+            </div>
+        </div>
+    </header>
 
-	<div class="buttons"><a class="btn" href="https://x.com/PINENUTISM">X/Twitter </a>&nbsp;<a class="btn"
-			href="https://t.me/PINENUTISM">Telegram</a>&nbsp;<a class="btn ca-btn"
-			href="https://pump.fun/coin/BskhjbrbwJ7AUmM9UoEc8mdJdfRdf6aiKC3BqT1Gpump">
-			CA: BskhjbrbwJ7AUmM9UoEc8mdJdfRdf6aiKC3BqT1Gpump&nbsp;</a></div>
-	<br />
-	<br />
-	<br />
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="full-content-container hero-container">
+            <div class="hero-left">
+                <div class="image-with-text-container">
+                    <img class="ye-img" src="ye.png" alt="">
+                    <div class="circular-text">
+                        <span style="--i:1">$FLUFO</span>
+                        <span style="--i:2">$FLUFO</span>
+                        <span style="--i:3">$FLUFO</span>
+                        <span style="--i:4">$FLUFO</span>
+                        <span style="--i:5">$FLUFO</span>
+                        <span style="--i:6">$FLUFO</span>
+                        <span style="--i:7">$FLUFO</span>
+                        <span style="--i:8">$FLUFO</span>
+                        <span style="--i:9">$FLUFO</span>
+                        <span style="--i:10">$FLUFO</span>
+                        <span style="--i:11">$FLUFO</span>
+                        <span style="--i:12">$FLUFO</span>
+                    </div>
+                </div>
+
+                <div class="floating-elements">
+                    <div class="float-item" style="--delay:0s; --size:30px">BUY</div>
+                    <div class="float-item" style="--delay:2s; --size:40px">PUMP</div>
+                    <div class="float-item" style="--delay:4s; --size:25px">MOON</div>
+                    <div class="float-item" style="--delay:1s; --size:35px">BIG</div>
+                    <div class="float-item" style="--delay:3s; --size:45px">SOL</div>
+                    <div class="float-item" style="--delay:5s; --size:30px">WAGMI</div>
+                </div>
+            </div>
+
+            <div class="hero-ca-container">
+                <div class="ca-input-wrapper">
+                    <input type="text" id="contract-address" value="EXaADBokEsMNaATagiLShPURoiazh9MGAWhBTC6qpump"
+                        readonly class="ca-input disabled">
+                    <button class="copy-button" type="button">
+                        <span class="tooltip">Click to copy</span>
+                        <span class="button-text">Copy CA</span>
+                    </button>
+                </div>
+
+                <script>
+                    const copyButton = document.querySelector('.copy-button');
+                    const contractInput = document.getElementById('contract-address');
+                    const buttonText = document.querySelector('.button-text');
+
+                    copyButton.addEventListener('click', async () => {
+                        try {
+                            await navigator.clipboard.writeText(contractInput.value);
+
+                            buttonText.textContent = 'Copied';
+                            setTimeout(() => {
+                                buttonText.textContent = 'Copy CA';
+                            }, 1500);
+                        } catch (error) {
+                            console.error('Ошибка копирования:', error);
+                        }
+                    });
+                </script>
+                <div class="hero-social-links">
+                    <a href="https://t.me/flufo_mem" target="_blank" class="social-button">
+                        <i class="fab fa-telegram"></i>
+                        Join Telegram
+                    </a>
+                    <a href="https://x.com/flufo_mem" target="_blank" class="social-button">
+                        <i class="fab fa-x-twitter"></i>
+                        Follow Twitter
+                    </a>
+                </div>
+                <a href="https://pump.fun/coin/EXaADBokEsMNaATagiLShPURoiazh9MGAWhBTC6qpump" class="dex-button">
+                    Buy on Pump.Fun
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- After the hero section -->
+    <section class="intro-section" id="about">
+        <div class="intro-card">
+            <div class="intro-text">
+                <h2 class="typewriter">Hey, I'm <span class="highlight">$flufo</span></h2>
+                <p class="reveal-text">Just a big fluffy crypto expert pretending to be clueless so y'all don't copy my
+                    moves. </p>
+                <p class="reveal-text">Just sitting here, acting bored, secretly plotting the meme coin that's gonna
+                    make your grandma ask what a blockchain is.</p>
+                <div class="stats-container">
+                    <div class="stat">
+                        <span class="stat-title">Patience level</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%">MAXED OUT</div>
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-title">Fluff level</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 100%">MAXED OUT</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Tokenomics Section -->
+    <section class="tokenomics-section" id="tokenomics">
+        <h2 class="section-title">Tokenomics</h2>
+        <div class="tokenomics-container">
+            <div class="tokenomics-card">
+                <div class="token-details">
+                    <div class="token-detail-item">
+                        <h3>Ticker</h3>
+                        <p class="token-value">$FLUFO</p>
+                    </div>
+                    <div class="token-detail-item">
+                        <h3>Total Supply</h3>
+                        <p class="token-value">1,000,000,000</p>
+                    </div>
+                    <div class="token-detail-item">
+                        <h3>Tax</h3>
+                        <p class="token-value">0/0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How To Buy Section -->
+    <section class="how-to-buy-section" id="how-to-buy">
+        <h2 class="section-title">How To Buy</h2>
+        <div class="steps-container">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Create Wallet</h3>
+                <p>Download Phantom wallet from Chrome store or phantom.app</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Get SOL</h3>
+                <p>Buy SOL from any exchange and send it to your Phantom wallet</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Visit Pump.fun</h3>
+                <p>Connect your wallet to Pump.fun and swap SOL for $FLUFO</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <h3>HODL</h3>
+                <p>Hold tight while pretending to be clueless like Flufo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="flufo-logo.png" alt="Flufo Logo">
+                <h3>$FLUFO</h3>
+            </div>
+            <div class="social-links">
+                <a href="https://x.com/flufo_mem" target="_blank" class="social-link">
+                    <i class="fab fa-x-twitter"></i>
+                    Twitter
+                </a>
+                <a href="https://t.me/flufo_mem" target="_blank" class="social-link">
+                    <i class="fab fa-telegram"></i>
+                    Telegram
+                </a>
+            </div>
+            <div class="footer-disclaimer">
+                <p>Join the $FLUFO community and be part of the next big meme coin revolution on Solana! Together, we'll
+                    reach new heights while having fun along the way.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Move these above your script.js -->
+    <script src="ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
