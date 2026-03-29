@@ -1,0 +1,2641 @@
+/* 全局样式重置 */
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Bubblegum+Sans&display=swap');
+
+:root {
+    --primary-color: #2C3E50;
+    --shadow-light: 0 4px 6px rgba(0,0,0,0.1);
+    --shadow-medium: 0 5px 15px rgba(0,0,0,0.1);
+    --shadow-dark: 0 8px 15px rgba(0,0,0,0.15);
+    --transition-default: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-family: 'Lilita One', cursive;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8), -2px -2px 4px rgba(255, 255, 255, 0.8);
+    will-change: transform;
+}
+
+/* 英雄区域样式 */
+.hero {
+    background-image: url('../img/Giveme.gif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    pointer-events: none;
+    will-change: opacity;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    position: relative;
+    z-index: 1;
+    transform: translateZ(0);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-family: 'Lilita One', cursive;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    transition: var(--transition-default);
+}
+
+.nav-link:hover {
+    color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.mobile-menu-btn {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1000;
+    position: relative;
+}
+
+.mobile-menu-btn span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+}
+
+.mobile-menu-btn.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.mobile-menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-btn.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 2rem;
+        transition: transform 0.3s ease-in-out;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 999;
+    }
+
+    .nav-menu.active {
+        transform: translateX(-100%);
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: rgba(44, 62, 80, 0.1);
+        transform: translateX(5px);
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    transform: translateZ(0);
+}
+
+.logo-text {
+    font-family: 'Lilita One', cursive;
+    font-size: 2rem;
+    color: var(--primary-color);
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+    transition: var(--transition-default);
+    will-change: transform;
+}
+
+.logo-text:hover, .logo-img:hover {
+    transform: scale(1.05);
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+.hero-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transform: translateZ(0);
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-text {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    max-width: 800px;
+    line-height: 1.8;
+    animation: fadeIn 1s ease-out 0.5s both;
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
+}
+
+.social-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: var(--transition-default);
+    box-shadow: var(--shadow-light);
+    position: relative;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-dark);
+}
+
+.social-icon {
+    height: 20px;
+    width: 20px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* 信念区域样式 */
+.believe-section {
+    padding: 2rem;
+    background: #fff;
+}
+
+gecko-coin-price-marquee-widget {
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: var(--shadow-light);
+}
+
+.believe-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    padding: 2rem;
+}
+
+.believe-image {
+    flex: 0 0 40%;
+}
+
+.believe-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-medium);
+}
+
+.believe-text {
+    flex: 0 0 55%;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: var(--shadow-light);
+}
+
+.believe-text h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+/* 未来展望区域样式 */
+.future-section {
+    padding: 4rem 2rem;
+    background: #F8E3FF;
+    text-align: center;
+}
+
+.future-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.future-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-default);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+/* 页脚样式 */
+.footer {
+    background: #333;
+    color: #fff;
+    padding: 4rem 2rem;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.footer-left {
+    flex: 1;
+}
+
+.footer-right {
+    flex: 1;
+    min-width: 300px;
+}
+
+#dexscreener-embed {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#dexscreener-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.footer-title {
+    font-family: 'Lilita One', cursive;
+    font-size: 2.5rem;
+    color: #fff;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-text p {
+    margin-bottom: 1rem;
+}
+
+/* 动画效果 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Memes区域样式 */
+.memes {
+    background: #fff;
+    padding: 4rem 0;
+    overflow: hidden;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.memes-row {
+    position: relative;
+    height: 300px;
+    margin: 2rem 0;
+    overflow: hidden;
+    transform: translateZ(0);
+}
+
+.memes-track {
+    display: flex;
+    position: absolute;
+    gap: 2rem;
+    height: 100%;
+    padding: 0 1rem;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.memes-track img {
+    height: 100%;
+    width: 280px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: var(--shadow-medium);
+    transition: transform 0.3s ease;
+}
+
+.memes-track img:hover {
+    transform: scale(1.05);
+}
+
+.track-left {
+    animation: scrollLeft 60s linear infinite;
+}
+
+.track-right {
+    animation: scrollRight 60s linear infinite;
+}
+
+@keyframes scrollLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 1rem)); }
+}
+
+@keyframes scrollRight {
+    0% { transform: translateX(calc(-50% - 1rem)); }
+    100% { transform: translateX(0); }
+}
+
+/* Rights区域样式 */
+.rights {
+    background: #FFC240;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.rights-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 0 2rem;
+    text-align: center;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+
+.footer-section h3 {
+    font-family: 'Lilita One', cursive;
+    color: #fff;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: var(--transition-default);
+    opacity: 0.8;
+    font-size: 1rem;
+}
+
+.footer-section ul li a:hover {
+    opacity: 1;
+    transform: translateX(5px);
+    color: #f8f9fa;
+}
+
+.rights-content {
+    width: 100%;
+    padding: 1rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 1.5rem;
+}
+
+.rights-content p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* Rights区域响应式布局 */
+@media (max-width: 768px) {
+    .rights-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section ul li a:hover {
+        transform: translateX(0) scale(1.05);
+    }
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    .footer-content {
+        flex-direction: column;
+    }
+    .footer-right { width: 100%; }
+    #dexscreener-embed { padding-bottom: 65%; }
+}
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .believe-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .social-links { justify-content: center; }
+    .hero-content {
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 { font-size: 2rem; }
+    .social-link {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .feature-card { padding: 1.5rem; }
+}
+
+/* 滚动动画效果 */
+.believe-section,
+.future-section,
+.footer {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out,
+                transform 0.8s ease-out;
+    will-change: opacity, transform;
+}
+
+.believe-section.visible,
+.future-section.visible,
+.footer.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.contract-address {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+    width: 600px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contract-address:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 36px 0 rgba(31, 38, 135, 0.25);
+}
+
+.contract-address p {
+    margin: 0 0 10px 0;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+    .contract-address {
+        padding: 15px;
+        margin: 15px auto;
+        width: 90%;
+    }
+
+    .contract-address p {
+        font-size: 1em;
+    }
+
+    .address-container {
+        padding: 10px;
+    }
+
+    .address-text {
+        font-size: 0.8em;
+    }
+
+    .copy-tooltip {
+        font-size: 0.8em;
+        padding: 6px 12px;
+    }
+}
+
+.address-container {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    word-break: break-all;
+}
+
+.address-container:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    line-height: 1.4;
+}
+
+.copy-tooltip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 0.9em;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.address-container:active .copy-tooltip {
+    opacity: 1;
+}
+
+.address-text {
+    color: #fff;
+    font-family: monospace;
+    font-size: 0.
+}
