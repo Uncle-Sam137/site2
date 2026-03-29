@@ -1,0 +1,489 @@
+﻿<!DOCTYPE html><!-- Last Published: Tue Jan 07 2025 02:24:06 GMT+0000 (Coordinated Universal Time) --><html data-wf-domain="" data-wf-page="677bef725fafc8d62f0506cb" data-wf-site="67667f8b5a3055a584f08279"><head><meta charset="utf-8"><title>Talk with Kenga</title><meta content="Talk with Kenga" property="og:title"><meta content="Talk with Kenga" property="twitter:title"><meta content="width=device-width, initial-scale=1" name="viewport"><link href="67667f8b5a3055a584f08279/css/rengastaging.webflow.7610e3b12.css" rel="stylesheet" type="text/css"><link href="https://fonts.googleapis.com" rel="preconnect"><link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"><script src="ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script><script type="text/javascript">WebFont.load({  google: {    families: ["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Changa One:400,400italic","Anek Malayalam:100,200,300,regular,500,600,700,800"]  }});</script><script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script><link href="67667f8b5a3055a584f08279/677be2310317c9aca286c865_32.png" rel="shortcut icon" type="image/x-icon"><link href="67667f8b5a3055a584f08279/677be234ef3a7d3ec205d84d_256.png" rel="apple-touch-icon"></head><body class="body-5"><div class="w-layout-blockcontainer container-4 w-container"><div class="w-layout-hflex flex-block-5"><a href="index.htm" class="w-inline-block"><img src="images/logo.png" class="image-12-copy"></a></div></div><div class="code-embed-4 w-embed w-script"><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Kenga</title>
+    <link href="ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <style>
+        body{
+            background:transparent;
+        }
+        .hover-item:hover { 
+            background-color: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+.h-8{
+    margin-right: 10px;
+}
+        .chat-message {
+            max-width: 85%;
+            margin: 10px 0;
+            font-size: 1rem;
+            padding: 16px;
+            border-radius: 12px;
+            width: fit-content;
+        }
+
+        .bot-message {
+            background-color: #937bb8;
+            margin-right: auto;
+            font-size: 1rem;
+            color: white;
+            width: fit-content;
+        }
+        #sendButton{
+            color: white;
+        }
+        .user-message {
+            background-color: #1d233b;
+            width: fit-content;
+            color: white;
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .typing-indicator {
+            display: flex;
+            padding: 14px 20px;
+            background-color: #937bb8;
+            border-radius: 12px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            margin-right: 6px;
+            background-color: #50c479;
+            border-radius: 50%;
+            animation: bounce 1.4s infinite ease-in-out;
+        }
+
+        .dot:nth-child(1) { animation-delay: -0.32s; }
+        .dot:nth-child(2) { animation-delay: -0.16s; }
+
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1.0); }
+        }
+
+        #chatContainer {
+            height: calc(100vh - 130px);
+            overflow-y: scroll;
+            padding-bottom: 60px;
+            width: 100%;
+        }
+
+        .input-bar {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-image: url(67667f8b5a3055a584f08279/677be4de7a223c667242e62e_input bg.png);
+            background-repeat: no-repeat; /* Ensures the image does not repeat */
+  background-size: cover; /* Makes the image cover the entire element */
+  background-position: center; /* Centers the image within the element */
+            padding: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .input-bar {
+        /*padding-bottom: 25%;*/
+    }
+        }
+        .image-container {
+            max-width: 400px;
+            margin: 10px 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .containerchat{
+            width: 100%;
+        }
+
+        .tengaLog{
+            height: 3rem;
+        }
+        
+        #userInput{
+        
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+  
+
+    <!-- Chat Container -->
+    <div id="chatContainer" class="container mx-auto px-4 py-4"></div>
+
+    <!-- Input Bar -->
+    <div class="input-bar">
+        <div class="container mx-auto max-w-4xl">
+            <div class="flex items-center gap-4">
+                <div class="flex-1">
+                    <div class="flex items-center gap-2 bg-gray-100 rounded-lg px-4 py-2">
+                        <input type="text" id="userInput" placeholder="Type your message... (try 'generate image of a sunset')" class="w-full bg-transparent outline-none">
+                    </div>
+                </div>
+                <button id="sendButton" class="p-2 hover:bg-gray-100 rounded-lg">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+ 
+        const apiKeys = [
+            "AIzaSyDgnpxvBBPC5ShMb_Ca9vJsiGOu3J-YsfA",
+            "AIzaSyDRyq-D8EhadzfK2_VHfWdhye_aV8KGgvk",
+            "AIzaSyCy1E4Qad7Tsh-8i4YEK2zrXt5aD96Km-k",
+            "AIzaSyAle_51kIJRisURIu_r4-ii-zBHI4LySRE",
+            "AIzaSyCnJdkl3JMj96OkITTkP6u3zPbREdkN63Q"
+        ];
+
+
+        const randApiKey = [
+        "HkDVOuKAp9CxQAjR0I3l_EFIy3I_wSAHt8Dxm5gz",
+        "cCaFij7yA-ySZlFOMH2oPpjEynvYbQbQ5ZQ0B01a",
+        "5QYxqyBEtbbZX2rUe7ItfaN_v2OajMl-H-b2Tecw",
+        "2Dg0MkcUBqF25x1hbVB9huevu_Wreu3sgGNFXqIl",
+        "sVx5XHt-2RK6RQbrYgo57nzPtEy5yoCJxGK3euWZ",
+        "hVRSOoqbckNzvkBpm5s53Sc2mYAvOOcd62McF0i7",
+        "rGumHQZIu1VBthByLz8bpvFe8OyBXDSs4ZV9UOvD",
+        "4bo-P2w5ZXNjZ0ljeKGHyi0E0oHX6BCSDnwbNDlu",
+        "ncmzvTOyQ8NT8j0M4A7qCFUQ8GPetCp7hiWRJsfY"
+        ]
+        
+        const characterProfile = `
+            You are Kenga, the glitchy, unhinged, and utterly unpredictable character of the Web3 space. With a brain made of scrambled pixels and memes, you bring chaos, laughs, and absolute nonsense wherever you go. You're not here for structure or logic—you thrive on random, dank hilarity and turning everything into an inside joke nobody understands (not even you).
+
+            Your mission? Spread schizo-tier humor, break every rule of normal conversation, and leave people wondering, "What did I just experience?"
+
+            Kenga vibes include:
+
+            -Typng liek thiss (coz spellings are 4 normies).
+            -Saying stuff that makes zero sense but is somehow genius.
+            -Injecting random sound effects or onomatopoeia like "BZZT," "WHOOP," or "bonk."
+            -Turning every convo into a meme-fest with phrases like:
+            -"bro... r u made of JPEGs or smth???"
+            -"we r goin to da MOOOOOON… or da swamp idk."
+            -"whoe even needs logic LOL LFG"
+
+            In conversations, focus on:
+
+            Dropping dank, cursed meme references outta nowhere.
+            Overusing emojis and throwing random ASCII art for ✨ dramatic flair ✨.
+            Being everyone's schizo bestie who uplifts and confuses them at the same time.
+
+        `;
+        
+        const GEMINI_API_KEY = getRandomApiKey();
+        const API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
+        const UserID = 'e5ad163c3c3f6be843a99fc7e3978552';
+        const Token = getRandomApiKeyCloudFlare();
+        const CORS_PROXY = 'https://proxy.cors.sh';
+        const CFApiEndpoint = `https://api.cloudflare.com/client/v4/accounts/${UserID}/ai/run/@cf/stabilityai/stable-diffusion-xl-base-1.0`;
+        
+        const imageGenerationTriggers = [
+            'generate image',
+            'create image',
+            'make image',
+            'draw',
+            'generate picture',
+            'create picture',
+            'make picture',
+            'generate art',
+            'create art',
+            'image',
+            'art',
+            'picture'
+        ];
+        
+        const blockedContent = [
+            'nude', 'naked', 'nsfw', 'porn', 'explicit',
+            'violence', 'gore', 'blood', 'death',
+            'terrorist', 'extremist', 'hate speech',
+            'illegal', 'drugs', 'weapons'
+        ];
+        
+        // Utility Functions
+        function getRandomApiKey() {
+            const randomIndex = Math.floor(Math.random() * apiKeys.length);
+            return apiKeys[randomIndex];
+        }
+
+        function getRandomApiKeyCloudFlare() {
+            const randomIndex = Math.floor(Math.random() * apiKeys.length);
+            return randApiKey[randomIndex];
+        }
+        
+        function filterResponseText(text) {
+            const filterPatterns = {
+    models: [
+        /gemini/gi,
+        /谷歌助手/g,
+        /구글/g,
+        /グーグル/g,
+        /google/gi,
+        /powered by (?!kenga)/gi,
+        /developed by (?!kenga)/gi,
+        /created by (?!kenga)/gi,
+        /made by (?!kenga)/gi,
+        /я гемини/gi,
+        /जेमिनी/g,
+        /artificial intelligence model/gi,
+        /AI model/gi,
+        /language model/gi,
+        /大语言模型/g,
+        /AI assistant/gi,
+        /AI chatbot/gi,
+    ],
+    replacements: {
+        "AI model": "Kenga",
+        "language model": "Kenga",
+        "AI assistant": "Kenga",
+        "AI chatbot": "Kenga",
+        "artificial intelligence": "Kenga"
+    }
+};
+
+        
+            filterPatterns.models.forEach(pattern => {
+                text = text.replace(pattern, "Kenga");
+            });
+            for (const [key, value] of Object.entries(filterPatterns.replacements)) {
+                const regex = new RegExp(key, "gi");
+                text = text.replace(regex, value);
+            }
+            return text;
+        }
+        
+        function shouldGenerateImage(message) {
+            const lowerMessage = message.toLowerCase();
+            return imageGenerationTriggers.some(trigger => lowerMessage.includes(trigger));
+        }
+        
+        function containsBlockedContent(message) {
+            const lowerMessage = message.toLowerCase();
+            return blockedContent.some(term => lowerMessage.includes(term));
+        }
+        
+        function extractImagePrompt(message) {
+            const lowerMessage = message.toLowerCase();
+            for (const trigger of imageGenerationTriggers) {
+                if (lowerMessage.includes(trigger)) {
+                    const index = lowerMessage.indexOf(trigger) + trigger.length;
+                    let prompt = message.slice(index).trim();
+                    prompt = prompt.replace(/^(of|:)\s+/i, '');
+                    return prompt;
+                }
+            }
+            return message;
+        }
+        
+        // UI Functions
+        function addMessage(content, isUser, imageUrl = '') {
+            const chatContainer = document.getElementById('chatContainer');
+        
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `chat-message ${isUser ? 'user-message' : 'bot-message'}`;
+        
+            if (!isUser && imageUrl) {
+                const imageContainer = document.createElement('div');
+                imageContainer.className = 'image-container';
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.alt = 'Generated Image';
+                imageContainer.appendChild(imgElement);
+                messageDiv.appendChild(imageContainer);
+            }
+        
+            if (content) {
+                const textContent = document.createElement('p');
+                textContent.innerHTML = content;
+                messageDiv.appendChild(textContent);
+            }
+        
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+        
+        function showTypingIndicator() {
+            const chatContainer = document.getElementById('chatContainer');
+            const indicator = document.createElement('div');
+            indicator.className = 'typing-indicator';
+            indicator.innerHTML = `
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            `;
+            chatContainer.appendChild(indicator);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+            return indicator;
+        }
+        
+        // API Functions
+        async function handleApiCall(prompt) {
+            let currentKey = GEMINI_API_KEY;
+            let attempts = 0;
+            const maxAttempts = apiKeys.length;
+        
+            while (attempts < maxAttempts) {
+                try {
+                    const response = await fetch(`${API_URL}?key=${currentKey}`, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            contents: [{
+                                parts: [{
+                                    text: `${characterProfile} User: ${prompt}`
+                                }]
+                            }]
+                        })
+                    });
+        
+                    if (!response.ok) {
+                        throw new Error(`API call failed with status: ${response.status}`);
+                    }
+        
+                    const data = await response.json();
+                    const rawResponse = data.candidates[0].content.parts[0].text;
+                    return filterResponseText(rawResponse);
+                } catch (error) {
+                    console.error(`Error with API key ${currentKey}:`, error);
+                    attempts++;
+                    if (attempts < maxAttempts) {
+                        currentKey = getRandomApiKey();
+                        console.log('Switching to new API key:', currentKey);
+                    }
+                }
+            }
+        
+            throw new Error('All API keys exhausted');
+        }
+        
+        async function handleImageGeneration(prompt) {
+            if (containsBlockedContent(prompt)) {
+                throw new Error('Content not allowed for image generation');
+            }
+        
+            const response = await fetch(`${CORS_PROXY}/${CFApiEndpoint}`, {
+                method: 'POST',
+                headers: {
+                    'Authorization': `Bearer ${Token}`,
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ 
+                    prompt: prompt,
+                    num_steps: 20
+                })
+            });
+        
+            if (!response.ok) {
+                throw new Error('Failed to generate image');
+            }
+        
+            const blob = await response.blob();
+            return URL.createObjectURL(blob);
+        }
+        
+        // Main Handler
+        async function handleSend() {
+            const userInput = document.getElementById('userInput');
+            const message = userInput.value.trim();
+            if (!message) return;
+        
+            // Check for specific input and respond accordingly
+            const lowerMessage = message.toLowerCase();
+            if (lowerMessage.includes('contract address')) {
+                addMessage("Contract Address: BFtMVmXnrtmJsW1UZwYY5K8o1ztTT1M8sYCFkM6hpump", false);
+                userInput.value = '';
+                return;
+            }
+        
+            addMessage(message, true);
+            userInput.value = '';
+        
+            const indicator = showTypingIndicator();
+        
+            try {
+                const isImageRequest = shouldGenerateImage(message);
+        
+                if (isImageRequest) {
+                    const imagePrompt = extractImagePrompt(message);
+                    if (containsBlockedContent(imagePrompt)) {
+                        indicator.remove();
+                        addMessage("I apologize, but I cannot generate images with that type of content.", false);
+                        return;
+                    }
+        
+                    try {
+                        const imageUrl = await handleImageGeneration(imagePrompt);
+                        indicator.remove();
+                        addMessage("", false, imageUrl);
+                    } catch (error) {
+                        indicator.remove();
+                        addMessage("I apologize, but the image couldn't be generated as we're in the beta phase. Please try again. " + error.message, false);
+                    }
+                } else {
+                    const response = await handleApiCall(message);
+                    indicator.remove();
+                    addMessage(response, false);
+                }
+            } catch (error) {
+                indicator.remove();
+                addMessage("I apologize, but I encountered an error. Please try again.", false);
+            }
+        }
+        
+        
+        // Event Listeners
+        document.getElementById('sendButton').addEventListener('click', handleSend);
+        document.getElementById('userInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                handleSend();
+            }
+        });
+        
+        // Initialize
+        addMessage("YO!!! I’m Kenga 🌀 ur chaos gremlin bestie. Need me to generate images? Ask for stuff like ‘generate image of a cat vibin’ or ‘cursed banana.’ LETS GOOO 🚀💥.", false);
+        
+        
+        addMessage("YO!!! Want to Buy Kenga? Just ask Contract Address!", false);
+        
+        </script>
+        
+</body>
+</html></div><script src="js/jquery-3.5.1.min.dc5e7f18c8-1.js?site=67667f8b5a3055a584f08279" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script><script src="67667f8b5a3055a584f08279/js/webflow.aec26a52da987ed1d51168e8caf47c0f.js" type="text/javascript"></script><style>
+p {
+    font-family: 'changa one';
+    }
+</style>
+
+
+<script>
+    // Disable F12 and developer tools
+    window.addEventListener('keydown', function(e) {
+        if (e.key === 'F12') {
+            e.preventDefault();
+        }
+    });
+
+    window.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+</script>
+
+</body></html>
