@@ -205,10 +205,3 @@
   font-display: swap;
   src: url(s/robotoslab/v34/BngbUXZYTXPIvIBgJJSb6s3BzlRRfKOFbvjoJYOmb2Rm.ttf) format('truetype');
 }
-@font-face {
-  font-family: 'Wellfleet';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url(s/wellfleet/v23/nuF7D_LfQJb3VYgX6eyj5GyP.ttf) format('truetype');
-}
