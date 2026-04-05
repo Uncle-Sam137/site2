@@ -1,0 +1,366 @@
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap);
+
+/* Rotation Room 样式 */
+.rotation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 720px;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
+.rotation-content {
+    width: 100vw;
+    height: 720px;
+    position: relative;
+    border-radius: 0;
+    animation: 200s linear infinite brightness;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-full {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    width: 100vw;
+    height: 720px;
+    transform: scale(1);
+    animation: 200s linear infinite zoom-in;
+}
+
+.m3m-logo {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    animation: 200s linear infinite blur;
+}
+
+.cube {
+    position: relative;
+    width: 870px;
+    height: 190px;
+    transform-style: preserve-3d;
+    perspective: 480px;
+    perspective-origin: 51% 70%;
+}
+
+.face {
+    position: absolute;
+    width: 870px;
+    height: 190px;
+    background: transparent;
+    border: 0 solid #000;
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.top, .bottom {
+    width: 870px;
+    height: 870px;
+}
+
+.rotation-container p {
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-size: calc(6em + (190px / 10) * 0.7);
+    padding-top: 20px;
+    color: #fff;
+}
+
+.rotation-container span {
+    color: red;
+}
+
+.front {
+    transform: translateZ(435px);
+    display: none;
+}
+
+.back {
+    transform: translateZ(-435px) rotateY(180deg) scaleX(-1);
+}
+
+.left {
+    transform: translateX(-435px) rotateY(-90deg) scaleX(-1);
+}
+
+.right {
+    transform: translateX(435px) rotateY(90deg) scaleX(-1);
+}
+
+.top {
+    transform: translateY(-435px) rotateX(90deg) scaleY(-1);
+}
+
+.bottom {
+    transform: translateY(-245px) rotateX(-90deg) scaleY(-1);
+}
+
+.left p {
+    margin-left: 480px;
+    animation: 200s linear infinite left;
+}
+
+.back p {
+    margin-left: -390px;
+    animation: 200s linear infinite back;
+}
+
+.right p {
+    margin-left: -1260px;
+    animation: 200s linear infinite right;
+}
+
+.animated-hue {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: overlay;
+    background: #1e5799;
+    background: radial-gradient(ellipse at center, #1e5799 0, #7db9e8 100%);
+    opacity: 1;
+    animation: 8s infinite filter-animation;
+}
+
+.container-reflect {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 380px;
+    filter: blur(10px);
+    width: 100%;
+}
+
+.container-reflect .cube {
+    perspective-origin: 51% -30%;
+}
+
+.container-reflect .back {
+    transform: translateZ(-435px) rotateY(180deg) scaleX(-1) scaleY(-1);
+}
+
+.container-reflect .left {
+    transform: translateX(-435px) rotateY(-90deg) scaleX(-1) scaleY(-1);
+}
+
+.container-reflect .right {
+    transform: translateX(435px) rotateY(90deg) scaleX(-1) scaleY(-1);
+}
+
+.container-reflect p {
+    transform: scaleY(70%);
+}
+
+/* 动画效果 */
+@keyframes left {
+    0% {
+        margin-left: 480px;
+    }
+    100% {
+        margin-left: -54000px;
+    }
+}
+
+@keyframes back {
+    0% {
+        margin-left: -390px;
+    }
+    100% {
+        margin-left: -54870px;
+    }
+}
+
+@keyframes right {
+    0% {
+        margin-left: -1260px;
+    }
+    100% {
+        margin-left: -55740px;
+    }
+}
+
+@keyframes filter-animation {
+    0%,
+    100% {
+        filter: hue-rotate(0deg);
+    }
+    50% {
+        filter: hue-rotate(100deg);
+    }
+}
+
+@keyframes zoom-in {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(2.5);
+    }
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(0px);
+    }
+    100% {
+        filter: blur(3px);
+    }
+}
+
+@keyframes brightness {
+    0% {
+        filter: brightness(1) contrast(1);
+    }
+    100% {
+        filter: brightness(0.8) contrast(1.3);
+    }
+}
+
+/* 响应式调整 */
+@media (max-width: 1200px) {
+    .cube {
+        transform: scale(0.9);
+    }
+    .rotation-container,
+    .rotation-content {
+        height: 500px;
+    }
+    .container-full {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .cube {
+        transform: scale(0.7);
+    }
+    .rotation-container,
+    .rotation-content {
+        height: 450px;
+    }
+    .container-full {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .cube {
+        transform: scale(0.5);
+    }
+    .rotation-container,
+    .rotation-content {
+        height: 400px;
+    }
+    .container-full {
+        width: 100vw;
+    }
+}
+
+@media (max-width: 576px) {
+    .cube {
+        transform: scale(0.4);
+    }
+    .rotation-container,
+    .rotation-content {
+        height: 300px;
+    }
+    .container-full {
+        width: 100vw;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .rotation-container,
+    .rotation-content,
+    .container-full {
+        height: 480px;
+    }
+
+    .cube {
+        width: 100%;
+        max-width: 600px;
+        height: 130px;
+    }
+
+    .face {
+        width: 100%;
+        max-width: 600px;
+        height: 130px;
+    }
+
+    .top, .bottom {
+        width: 100%;
+        max-width: 600px;
+        height: 600px;
+    }
+
+    .rotation-container p {
+        font-size: calc(4em + (130px / 10) * 0.7);
+        padding-top: 10px;
+    }
+
+    .m3m-logo {
+        width: 100px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rotation-container,
+    .rotation-content,
+    .container-full {
+        height: 360px;
+    }
+
+    .cube {
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+    }
+
+    .face {
+        width: 100%;
+        max-width: 400px;
+        height: 100px;
+    }
+
+    .top, .bottom {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+    }
+
+    .rotation-container p {
+        font-size: calc(3em + (100px / 10) * 0.7);
+        padding-top: 8px;
+    }
+
+    .m3m-logo {
+        width: 80px;
+    }
+}
