@@ -1,451 +1,212 @@
-﻿<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!-- This site was created in Webflow. https://webflow.com --><!-- Last Published: Tue Nov 19 2024 00:46:17 GMT+0000 (Coordinated Universal Time) -->
+<html data-wf-domain="" data-wf-page="67297418b2029beb5bbde139" data-wf-site="67297418b2029beb5bbde133">
 
 <head>
-	<title>GOGGLES</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<style>
-		body {
-			opacity: 0;
-			visibility: hidden;
-			background-color: #016cf8;
-			transition:
-				opacity 0.2s ease 0.2s 0s,
-				visibility 0.2s ease 0.2s 0s;
-		}
-
-		.loaded body {
-			opacity: 1;
-			visibility: visible;
-		}
-	</style>
-	<link rel="stylesheet" href="css/style.min.css?_v=20241026090542">
-	<link rel="shortcut icon" href="favicon.ico">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/icon.jpg">
+    <meta charset="utf-8">
+    <title>Green Slime</title>
+    <meta
+        content="What is slime may never die. An indestructible blob coin on Solana. Collect SLIMY, watching it wiggle, and embrace the goo."
+        name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="Webflow" name="generator">
+    <link href="css/blob-cto.webflow.81587de6e.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous">
+    <script src="js/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">WebFont.load({ google: { families: ["Indie Flower:regular"] } });</script>
+    <script
+        type="text/javascript">!function (o, c) { var n = c.documentElement, t = " w-mod-"; n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch") }(window, document);</script>
+    <link href="images/67344f495404f4a4d3b98a93_image%204.png" rel="shortcut icon" type="image/x-icon">
+    <link href="images/67344f4eb129ec433bedc3d3_image%205.png" rel="apple-touch-icon">
 </head>
 
-<body>
-	<div class="wrapper">
-		<div class="menu-open-bg"></div>
-		<header class="header">
-			<div class="header__container">
-				<a href="index.html" class="header__logo"><img src="img/logo.png" alt="Logo"></a>
-				<div class="header__right">
-					<div class="header__menu menu">
-						<button type="button" class="menu__icon icon-menu">
-							<span></span>
-						</button>
-						<nav class="menu__body">
-							<ul class="menu__list">
-								<li class="menu__item">
-									<a href="#" data-goto=".about" class="menu__link">About</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" data-goto=".how" class="menu__link">How to buy</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" data-goto=".tokenomics" class="menu__link">Tokenomics</a>
-								</li>
-								<li class="menu__item">
-									<a href="#" data-goto=".join" class="menu__link">Contacts</a>
-								</li>
-							</ul>
-						</nav>
-					</div>
-					<div class="header__actions" data-da=".menu__body, 767.98">
-						<div class="header__social">
-							<a href="https://t.me/goggles_token" target="_blank" class="header__social-item">
-								<svg xmlns="http://www.w3.org/2000/svg" width="32" height="27" viewbox="0 0 32 27"
-									fill="none">
-									<path fill-rule="evenodd" clip-rule="evenodd"
-										d="M28.5513 0.339791C28.943 0.17814 29.3716 0.122388 29.7926 0.178336C30.2137 0.234285 30.6117 0.399889 30.9453 0.657912C31.279 0.915936 31.536 1.25695 31.6896 1.64545C31.8433 2.03395 31.888 2.45574 31.819 2.86692L28.2249 24.248C27.8763 26.3105 25.5689 27.4932 23.6404 26.4659C22.0271 25.6064 19.6311 24.2822 17.4759 22.9006C16.3983 22.2089 13.0974 19.9942 13.503 18.4182C13.8517 17.0708 19.3981 12.0072 22.5675 8.99668C23.8115 7.81394 23.2442 7.13164 21.7752 8.21958C18.1272 10.9208 12.2701 15.0285 10.3336 16.1849C8.62534 17.2044 7.73474 17.3785 6.66982 17.2044C4.72698 16.8874 2.92518 16.3962 1.45458 15.7979C-0.532636 14.9897 -0.43597 12.3102 1.45299 11.53L28.5513 0.339791Z"
-										fill="black"></path>
-								</svg>
-							</a>
-							<a href="https://x.com/goggles_token" target="_blank" class="header__social-item">
-								<svg xmlns="http://www.w3.org/2000/svg" width="30" height="25" viewbox="0 0 30 25"
-									fill="none">
-									<path
-										d="M23.2223 0.0180664L27.5781 0.0180664L18.0617 10.5938L29.2577 24.982H20.4917L13.6266 16.2545L5.76965 24.982H1.41151L11.5908 13.6698L0.850464 0.0192172L9.83898 0.0192172L16.0448 7.99644L23.2223 0.0180664ZM21.6943 22.448H24.1077L8.52751 2.41975H5.93772L21.6943 22.448Z"
-										fill="black"></path>
-								</svg>
-							</a>
-						</div>
-						<a href="https://pump.fun/coin/AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump" target="_blank"
-							class="header__button">BUY NOW!</a>
-					</div>
-				</div>
-			</div>
-		</header>
-
-		<main class="page">
-			<section class="page__hero hero">
-				<div class="hero__bg"></div>
-				<div class="hero__container">
-					<h1 class="hero__title">
-						<img src="img/hero/title.png" alt="GOGGLES">
-					</h1>
-					<div class="hero__image">
-						<img src="img/hero/01.png" alt="Image">
-					</div>
-					<div class="hero__bottom">
-						<div class="hero__artwork">
-							<div class="hero__artwork-header">
-								<img src="img/about/h1.svg" alt="Icon">
-								<img src="img/about/h3.svg" alt="Icon">
-							</div>
-							<div class="hero__artwork-text">
-								GET YOUR GOGLZ ON
-								<a target="_blank" href="https://x.com/goggles_token">@goggles_token</a>
-							</div>
-						</div>
-						<a href="https://pump.fun/coin/AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump" target="_blank"
-							class="hero__button">BUY NOW!</a>
-						<div class="hero__bottom-item"></div>
-					</div>
-				</div>
-			</section>
-			<section class="page__about about">
-				<div class="about__bg">
-					<img src="img/about/bg.jpg" alt="Image">
-					<img src="img/about/bg.jpg" alt="Image">
-					<img src="img/about/bg.jpg" alt="Image">
-				</div>
-				<div class="about__container">
-					<div class="about__items" data-watch-threshold="0.55" data-watch-once="" data-watch="">
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>010101010010110</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-image">
-									<img src="img/about/01.jpg" alt="Image">
-								</div>
-							</div>
-						</div>
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>010101010010110</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-image">
-									<img src="img/about/03.jpg" alt="Image">
-								</div>
-							</div>
-						</div>
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>010101010010110</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-image">
-									<img src="img/about/02.jpg" alt="Image">
-								</div>
-							</div>
-						</div>
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>010101010010110</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-image">
-									<img src="img/about/03.jpg" alt="Image">
-								</div>
-							</div>
-						</div>
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>010101010010110</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-image">
-									<img src="img/about/01.jpg" alt="Image">
-								</div>
-							</div>
-						</div>
-						<div class="about__item item-about">
-							<div class="item-about__header">
-								<div class="item-about__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>About "Goggles"</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-								<div class="item-about__header-bottom">
-									<span>File</span>
-									<span>Edit</span>
-									<span>View </span>
-								</div>
-							</div>
-							<div class="item-about__body">
-								<div class="item-about__body-info">
-									<h2>About Goggles</h2>
-									<p>
-										Pump.fun FAST BOI. THEY STAY ON.
-									</p>
-									<ul>
-										<li>Only on Pump.fun</li>
-										<li>
-
-
-										</li>
-										<li>THEY STAY ON.</li>
-									</ul>
-									<p>
-										How to buy: <a
-											href="https://pump.fun/coin/AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump"
-											target="_blank">Buy On Pump.fun</a>
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="page__how how">
-				<div class="how__bg">
-					<img src="img/how/bg1.svg" alt="Image">
-					<img src="img/how/bg2.svg" alt="Image">
-				</div>
-				<div class="how__container">
-					<h2 class="how__title">How to Buy</h2>
-					<div class="how__items">
-						<div class="how__item item-how item-how-1" data-watch-threshold="0.75" data-watch-once=""
-							data-watch="">
-							<div class="item-how__header">
-								<div class="item-how__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>BRIDGE</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-								<div class="item-how__header-bottom">
-									<span>File</span>
-									<span>Edit</span>
-									<span>View</span>
-									<span>Help</span>
-								</div>
-							</div>
-							<div class="item-how__body">
-								<div class="item-how__num">1</div>
-								<div class="item-how__text">
-									To bridge right into Goggles from any EVM chain or Solana visit DeBridge.
-									Select Pump.fun as your destination chain.
-									Select Goggles for your token and swap away!
-								</div>
-							</div>
-						</div>
-						<div class="how__item item-how item-how-2" data-watch-threshold="0.75" data-watch-once=""
-							data-watch="">
-							<div class="item-how__header">
-								<div class="item-how__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>ALREADY ON Pump.fun?</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-								<div class="item-how__header-bottom">
-									<span>File</span>
-									<span>Edit</span>
-									<span>View</span>
-									<span>Help</span>
-								</div>
-							</div>
-							<div class="item-how__body">
-								<div class="item-how__num">2</div>
-								<div class="item-how__text">
-									Visit Shadow, SwapX, Equalizer, or your dex of choice on Pump.fun!
-								</div>
-							</div>
-						</div>
-						<div class="how__item item-how item-how-3" data-watch-threshold="0.75" data-watch-once=""
-							data-watch="">
-							<div class="item-how__header">
-								<div class="item-how__header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<span>PUT YOUR GOGGLES ON!</span>
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-								<div class="item-how__header-bottom">
-									<span>File</span>
-									<span>Edit</span>
-									<span>View</span>
-									<span>Help</span>
-								</div>
-							</div>
-							<div class="item-how__body">
-								<div class="item-how__num">3</div>
-								<div class="item-how__text">
-									Follow Goggles on X and hop in the Telegram to party with the community!
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="how__image">
-						<img src="img/how/01.png" alt="Image">
-					</div>
-				</div>
-			</section>
-			<section class="page__tokenomics tokenomics">
-				<div class="tokenomics__images" data-watch-threshold="0.65" data-watch-once="" data-watch="">
-					<img src="img/tokenomics/01.png" alt="Image">
-					<img src="img/tokenomics/infoBg.svg" alt="Image">
-				</div>
-				<div class="tokenomics__container">
-					<div class="tokenomics__body">
-						<div class="tokenomics__header">
-							<div class="tokenomics__header-top">
-								<img src="img/about/h1.svg" alt="Icon">
-								<span>Tokenomics</span>
-								<img src="img/about/h2.svg" alt="Icon">
-							</div>
-							<div class="tokenomics__header-bottom">
-								<span>File</span>
-								<span>Edit</span>
-								<span>View</span>
-							</div>
-						</div>
-						<div class="tokenomics__main">
-							<h2 class="tokenomics__title">
-								<span>Tokenomics</span>
-								<img src="img/tokenomics/arrow.svg" alt="Arrow">
-							</h2>
-							<div class="tokenomics__info">
-								<div class="tokenomics__items" data-watch-threshold="0.75" data-watch-once=""
-									data-watch="">
-									<div class="tokenomics__row">
-										<div class="tokenomics__item">
-											<span>1,000,000,000</span>
-											<span>Token Supply</span>
-										</div>
-									</div>
-									<div class="tokenomics__row">
-										<div class="tokenomics__item">
-											<span>LP</span>
-											<span>LOCKED ON Pump.fun</span>
-										</div>
-										<div class="tokenomics__item">
-											<span>CA</span>
-											<span>Renounced</span>
-										</div>
-										<div class="tokenomics__row-img">
-											<img src="img/tokenomics/arrow2.svg" alt="Arrow">
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="tokenomics__bottom">
-							<div class="tokenomics__ca">
-								<span>CA:</span>
-								<button type="button" class="copy-ca-btn">
-									AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump
-								</button>
-							</div>
-							<div class="tokenomics__how">
-								<p>
-									How to buy: <a
-										href="https://pump.fun/coin/AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump"
-										target="_blank">Buy On Pump.fun</a>
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<section class="page__join join">
-				<div class="join__bg">
-					<img src="img/join/bg.jpg" alt="Image">
-				</div>
-				<div class="join__container">
-					<div class="join__body">
-						<div class="join__header" data-watch-threshold="0.75" data-watch-once="" data-watch="">
-							<h2 class="join__title">Join Us</h2>
-							<a href="https://pump.fun/coin/AEjuL4cn68wfm85dX53cN9ycTELATF4GE2fovCUQpump" target="_blank"
-								class="join__button"> BUY NOW! </a>
-						</div>
-						<div class="join__socail">
-							<a href="https://x.com/goggles_token" target="_blank" class="join__social-item">
-								<img src="img/join/x.svg" alt="X">
-							</a>
-							<a href="https://t.me/goggles_token" target="_blank" class="join__social-item">
-								<img src="img/join/tel.svg" alt="Telegram">
-							</a>
-						</div>
-					</div>
-				</div>
-			</section>
-		</main>
-		<footer class="footer">
-			<div class="footer__top">
-				<div class="footer__container">
-					<div class="footer__top-body">
-						<div class="footer__top-image">
-							<img src="img/footer.png" alt="Image">
-						</div>
-						<div class="footer__top-menu" data-watch-threshold="0.65" data-watch-once="" data-watch="">
-							<div class="footer__top-menu-header">
-								<div class="footer__top-menu-header-top">
-									<img src="img/about/h1.svg" alt="Icon">
-									<img src="img/about/h2.svg" alt="Icon">
-								</div>
-								<div class="footer__top-menu-header-bottom">
-									<span>File</span>
-									<span>Edit</span>
-								</div>
-							</div>
-							<div class="footer__top-menu-main">
-								<div class="footer__top-menu-items">
-									<a href="#" data-goto=".about" class="footer__top-menu-item">About
-									</a>
-									<a href="#" data-goto=".how" class="footer__top-menu-item">How to buy</a>
-									<a href="#" data-goto=".tokenomics" class="footer__top-menu-item">Tokenomics</a>
-									<a href="#" data-goto=".join" class="footer__top-menu-item">Contacts</a>
-								</div>
-								<div class="footer__top-menu-social">
-									<a href="https://t.me/goggles_token" target="_blank"
-										class="footer__top-menu-social-item">
-										<img src="img/tel.png" alt="Logo">
-									</a>
-									<a href="https://x.com/goggles_token" target="_blank"
-										class="footer__top-menu-social-item">
-										<img src="img/x.png" alt="Logo">
-									</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="footer__bottom">
-				<div class="footer__container">
-					<div class="footer__bottom-body">
-						<span>2026 © ALL RIGHTS RESERVED</span>
-					</div>
-				</div>
-			</div>
-		</footer>
-
-	</div>
-	<script src="js/app.min.js?_v=20241026090542"></script>
+<body class="body">
+    <div class="page-wrapper">
+        <div data-animation="default" class="navbar3_component w-nav" data-easing2="ease"
+            fs-scrolldisable-element="smart-nav" data-easing="ease" data-collapse="medium"
+            data-w-id="e4aa306b-687e-f427-5f7a-ef5c0ce2b7ac" role="banner" data-duration="400">
+            <div class="navbar3_container">
+                <div class="navbar3_menu-button w-nav-button">
+                    <div class="menu-icon3">
+                        <div class="menu-icon3_line-top"></div>
+                        <div class="menu-icon3_line-middle"></div>
+                        <div class="menu-icon3_line-bottom"></div>
+                    </div>
+                </div>
+                <nav role="navigation" class="navbar3_menu w-nav-menu"><a href="https://x.com/Green_Slime_Mem"
+                        class="menu-link w-inline-block"><img src="images/672cb047461b45b0b5a4ca70_Frame%205.svg"
+                            loading="lazy" width="80" alt=""></a><a href="https://t.me/Green_Slime_Mem"
+                        class="menu-link w-inline-block"><img src="images/672cb0473765af47c62cddb1_Frame%206.svg"
+                            loading="lazy" width="80" alt=""></a></nav><a href="#"
+                    class="navbar3_logo-link w-nav-brand"><img width="156" loading="lazy" alt=""
+                        src="images/672cb047968918aeb95caafb_blob%20logo2%201.svg" class="navbar3_logo"></a><a
+                    id="w-node-e4aa306b-687e-f427-5f7a-ef5c0ce2b7ca-5bbde139"
+                    href="https://pump.fun/3yeapvQdSHeT1TRKyn9AAQ5VGy89ka28EK7Qnf9tpump"
+                    class="button w-button">BUY $SLIMY</a>
+                <div style="opacity:0" class="navbar3_menu-background"></div>
+            </div>
+        </div>
+        <div class="div-block-12">
+            <div class="div-block-11"><img src="images/673080c5f4ecee1c9631295f_Frame%207.svg" loading="lazy"
+                    style="-webkit-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0px, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)"
+                    data-w-id="b822a313-51e5-6a16-ff26-8d6ddd8b4bf2" alt="" class="image-2"></div>
+            <div style="display:none" data-w-id="4fde9335-d014-cddb-74fe-ed1767c13038" data-is-ix2-target="1"
+                class="lottie blackbg" data-animation-type="lottie"
+                data-src="./cdn.prod.website-files.com/67297418b2029beb5bbde133/672afbcfd10182c4115c7cec_blob%20intro.mp4.lottie%20(1).json"
+                data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0"
+                data-duration="6.153846153846154"></div>
+            <header class="meet-section">
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="padding-section-large">
+                            <div class="div-block-3">
+                                <div class="w-layout-hflex flex-block">
+                                    <h1 class="heading">Meet</h1><img
+                                        src="images/672cb047968918aeb95caafb_blob%20logo2%201.svg" loading="lazy"
+                                        width="215" alt="" class="image">
+                                </div>
+                                <div class="text-meet-blob">Just an indestructible green slime with zero chill and no
+                                    plans for world domination—only pure, unfiltered slime energy. He was left for dead
+                                    once, but the funny thing is, what is slime may never die. Hold SLIMY, watch it
+                                    wiggle, and embrace the goo.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="w-layout-vflex">
+                <div data-w-id="b8e8c66e-0e29-ead8-1d85-6e0067297faf" data-is-ix2-target="1" class="lottie green"
+                    data-animation-type="lottie"
+                    data-src="./cdn.prod.website-files.com/67297418b2029beb5bbde133/672ce00adf1480eca2636121_floating%20blob%20new.json"
+                    data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0"
+                    data-duration="4.037370539591901"></div>
+                <header class="believe-section">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large">
+                                <div class="believe-wrapper">
+                                    <div class="w-layout-hflex flex-block">
+                                        <h1 class="heading">Believe in $SLIMY</h1><img src="" loading="lazy" alt="">
+                                    </div>
+                                    <div class="div-block-7"><img src="images/672cb6ba03fc04d84effd750_image%202.avif"
+                                            loading="lazy" id="w-node-_8daea621-cda1-849b-1d07-6553942f7180-5bbde139"
+                                            alt="" class="img-believe"><img
+                                            src="images/672cb6ba4dedb8a25e9bb8e0_bend%201.avif" loading="lazy"
+                                            id="w-node-c5517743-f543-c411-a939-4e618f8d37d8-5bbde139" alt=""
+                                            class="img-believe"><img
+                                            src="images/672cb6ba87de88ed346ce677_blob%20cry%201.avif" loading="lazy"
+                                            id="w-node-_9b48aeaa-55a9-88e1-9723-7afb305948a4-5bbde139" alt=""
+                                            class="img-believe"><img
+                                            src="images/672cb6bab472dea5766a983d_image%201.avif" loading="lazy"
+                                            id="w-node-_64ed5cc2-7908-b24b-ff59-44004c099346-5bbde139" alt=""
+                                            class="img-believe"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <header class="never-die-section">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large">
+                                <div class="div-block-14">
+                                    <h1 class="heading white">What Is SLIMY May Never Die</h1>
+                                </div>
+                                <div class="div-block-13"><img src="images/6733a611e21014c63a11a086_Comics_2%202.avif"
+                                        loading="lazy" id="w-node-_1f1cbbd6-26d7-ac32-30db-1573af443d21-5bbde139"
+                                        sizes="(max-width: 767px) 90vw, 28vw" alt=""
+                                        srcset="images/6733a611e21014c63a11a086_Comics_2%202-p-500.avif 500w, images/6733a611e21014c63a11a086_Comics_2%202-p-800.avif 800w, images/6733a611e21014c63a11a086_Comics_2%202.avif 1150w"
+                                        class="image-3"><img src="images/6733a6120b9af47baf307b29_Katana%201.avif"
+                                        loading="lazy" id="w-node-_70134095-fb52-9df5-1ed7-df9bf492e85d-5bbde139"
+                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 208.86459350585938px, 28vw"
+                                        alt=""
+                                        srcset="images/6733a6120b9af47baf307b29_Katana%201-p-500.avif 500w, images/6733a6120b9af47baf307b29_Katana%201.avif 1150w"
+                                        class="image-3 hide-mobile"><img
+                                        src="images/6733ba64cad49c8ab4c60884_Arrow%201.avif" loading="lazy"
+                                        id="w-node-f6197385-595c-992d-2fae-c77f7d58c933-5bbde139"
+                                        sizes="(max-width: 479px) 100vw, (max-width: 767px) 208.875px, 28vw" alt=""
+                                        srcset="images/6733ba64cad49c8ab4c60884_Arrow%201-p-500.avif 500w, images/6733ba64cad49c8ab4c60884_Arrow%201.avif 1150w"
+                                        class="image-3 hide-mobile"></div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+            <header class="bobulate-section">
+                <div class="padding-global">
+                    <div class="container-large">
+                        <div class="padding-section-large">
+                            <div class="div-block-9"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="w-layout-vflex flex-block-3"><a
+                    href="https://pump.fun/3yeapvQdSHeT1TRKyn9AAQ5VGy89ka28EK7Qnf9tpump"
+                    class="buy-section w-inline-block">
+                    <div class="div-block-4">
+                        <div class="padding-global _100">
+                            <div class="container-large _100">
+                                <div class="div-block-6">
+                                    <div class="div-block-8">
+                                        <div class="w-layout-hflex flex-block">
+                                            <h1 class="heading-2">buy</h1><img
+                                                src="images/672cd311372ab00ec6b07493_Group%201.svg" loading="lazy"
+                                                alt="">
+                                        </div>
+                                        <div class="text-block">3yeapvQdSHeT1TRKyn9AAQ5VGy89ka28EK7Qnf9tpump</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-w-id="ed27f820-d652-70d4-c12c-628d6e6a274e" data-is-ix2-target="1" class="lottie blue-bg"
+                        data-animation-type="lottie"
+                        data-src="./cdn.prod.website-files.com/67297418b2029beb5bbde133/672cdfdf74f9c407b340b148_Comp%202.json"
+                        data-loop="0" data-direction="1" data-autoplay="0" data-renderer="svg" data-default-duration="0"
+                        data-duration="4.004004004004004"></div>
+                </a><a href="https://sol-incinerator.com/" class="burn-section w-inline-block">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large burn">
+                                <div class="div-block-3 centre">
+                                    <div class="w-layout-hflex flex-block">
+                                        <h1 class="heading yellow">Burn SLIMY</h1><img
+                                            src="images/672cb6db78b27e4e2fcb7efe_Group%201.svg" loading="lazy" alt="">
+                                    </div>
+                                    <div class="because-why-not">because why not.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                <header class="contact-section">
+                    <div class="padding-global">
+                        <div class="container-large">
+                            <div class="padding-section-large no-padding">
+                                <div class="div-block-3 right"><img
+                                        src="images/672cb6baebe0a9c5090b299f_UP_2_WHITE%201.avif" loading="lazy"
+                                        id="w-node-_5edc225f-5efe-f641-e53c-778d553e1255-5bbde139" alt=""
+                                        class="img-believe">
+                                    <div class="w-layout-vflex flex-block-2">
+                                        <div class="text-block-2 blue">contact the $SLIMY</div>
+                                        <div class="w-layout-hflex flex-block"><img src="" loading="lazy" alt=""></div>
+                                        <a id="w-node-_24877c99-2542-4bf0-56c9-5d748cc4d9b5-5bbde139"
+                                            href="mailto:greenslimesol@gmail.com"
+                                            class="button contact w-button">CONTACT</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+            </div>
+        </div>
+        <script src="js/jquery-3.5.1.min.dc5e7f18c8.js" type="text/javascript" crossorigin="anonymous"></script>
+        <script src="js/webflow.85f7fc25d.js" type="text/javascript"></script>
+    </div>
 </body>
 
 </html>
